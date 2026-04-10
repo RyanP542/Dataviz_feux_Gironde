@@ -1,0 +1,136 @@
+        :root {
+            --bg-color: #0E0E0E;
+            --text-color: #E5E2E1;
+            --primary-accent: #FF4500;
+            --secondary-accent: #FFB5A0;
+            --surface-variant: #1A1A1A;
+            --outline-color: #333333;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        section {
+            /* Removed min-height: 100vh to avoid excessive empty space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 100px 0; /* Consistent vertical padding for the StoryMap flow */
+        }
+
+        .thermal-gradient {
+            background: linear-gradient(135deg, var(--secondary-accent) 0%, var(--primary-accent) 100%);
+        }
+
+        .text-thermal {
+            background: linear-gradient(135deg, var(--secondary-accent) 0%, var(--primary-accent) 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .abyss-overlay {
+            background: linear-gradient(to bottom, rgba(14, 14, 14, 0.2) 0%, rgba(14, 14, 14, 1) 100%);
+        }
+
+        /* Simulator Styles */
+        .sim-container { 
+            background: var(--surface-variant); 
+            color: #fff; 
+            padding: 32px; 
+            border-radius: 8px; 
+            font-family: 'Manrope', sans-serif; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            border: 1px solid var(--outline-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .sim-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 32px; 
+        }
+        @media(max-width:768px){ .sim-grid { grid-template-columns: 1fr; } }
+        .sim-controls label { 
+            display: block; 
+            margin-top: 16px; 
+            font-weight: 600; 
+            color: #ccc; 
+            font-size: 0.9rem;
+        }
+        .sim-controls input[type="range"] { 
+            width: 100%; 
+            margin-top: 8px; 
+            accent-color: var(--primary-accent); 
+        }
+        .sim-viz { 
+            position: relative; 
+            height: 220px; 
+            background: #090909; 
+            border: 1px solid #222; 
+            border-radius: 4px; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: flex-end; 
+            justify-content: center; 
+        }
+        .fire-polygon { 
+            background: rgba(255, 69, 0, 0.7); 
+            border: 2px solid var(--primary-accent); 
+            border-radius: 4px; 
+            width: 40px; 
+            height: 40px; 
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+            transform-origin: bottom center; 
+        }
+        .sim-stats { 
+            text-align: center; 
+            margin-top: 20px; 
+            background: #111; 
+            padding: 20px; 
+            border-radius: 4px; 
+            border: 1px solid #222;
+        }
+        .sim-stats h4 { margin: 0; color: #888; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; }
+        .sim-stats .valeur-ha { font-size: 2.5rem; color: var(--primary-accent); font-weight: 700; margin: 8px 0; }
+        .sim-code { 
+            font-family: 'Courier New', Courier, monospace; 
+            font-size: 0.75rem; 
+            color: #555; 
+            background: #050505; 
+            padding: 12px; 
+            border-radius: 4px; 
+            text-align: left; 
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+        
+.etiquette-ville {
+    background: transparent !important; 
+    border: none !important;            
+    box-shadow: none !important;       
+    color: #E5E2E1 !important;         
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    text-shadow: 0px 0px 8px rgba(0,0,0, 0.9); 
+}
+
+
+.leaflet-tooltip-left::before, 
+.leaflet-tooltip-right::before {
+    display: none !important;
+}
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-accent); }
